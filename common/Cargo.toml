@@ -1,0 +1,20 @@
+[package]
+name = "soarchain-common"
+version = "0.1.0"
+edition = "2021"
+authors = ["soarchain"]
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "soarchain_common"
+
+[features]
+#default = ["mainnet"]
+mainnet = []
+no-entrypoint = []
+cpi = ["no-entrypoint"]
+
+[dependencies]
+anchor-lang = "0.28.0"
+anchor-spl = "0.28.0"

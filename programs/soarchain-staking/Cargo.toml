@@ -1,0 +1,22 @@
+[package]
+name = "soarchain-staking"
+version = "0.1.0"
+description = "Soarchain Staking for decentralized cars"
+edition = "2021"
+homepage = "https://soarchain.com/"
+authors = ["sorchain"]
+license = "MIT"
+keywords = ["solana", "sorchain", "depin", "staking", "anchor"]
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "soarchain_staking"
+
+[features]
+no-entrypoint = []
+cpi = ["no-entrypoint"]
+
+[dependencies]
+anchor-lang = "0.28.0"
+anchor-spl = "0.28.0"
+soarchain-common = { path = "../../common" }
