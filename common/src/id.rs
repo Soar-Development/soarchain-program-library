@@ -14,7 +14,7 @@ pub use soar_token::ID as SOAR_TOKEN;
 mod soar_token {
     use super::*;
     #[cfg(feature = "mainnet")]
-    declare_id!("");
+    declare_id!("6LYGMPnpZnCh4tPGDCdUREmig5SA5NPj2BssYhCerZcP");
     #[cfg(not(feature = "mainnet"))]
     declare_id!("6LYGMPnpZnCh4tPGDCdUREmig5SA5NPj2BssYhCerZcP");
 }
@@ -28,7 +28,7 @@ mod staking_program {
 pub use rewards_program::ID as REWARDS_PROGRAM;
 mod rewards_program {
     use super::*;
-    declare_id!("");
+    declare_id!("A9ckgy4rXMUnupZR3CcmfXnQceE1NbXvthjyKUEuDPKj");
 }
 
 pub use authority::ID as AUTHORITY;
