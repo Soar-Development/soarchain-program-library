@@ -1,0 +1,22 @@
+[package]
+name = "soarchain_rewards"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "soarchain_rewards"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.28.0"
+anchor-spl = "0.28.0"
+soarchain-common = { path = "../../common" }
+soarchain-staking = { path = "../soarchain-staking", features = ["cpi"] }
