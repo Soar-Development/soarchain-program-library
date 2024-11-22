@@ -1759,6 +1759,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "soarchain_rewards"
+version = "0.1.0"
+dependencies = [
+ "anchor-lang",
+ "anchor-spl",
+ "soarchain-common",
+ "soarchain-staking",
+]
+
+[[package]]
 name = "solana-frozen-abi"
 version = "1.16.25"
 source = "registry+https://github.com/rust-lang/crates.io-index"
