@@ -10,7 +10,7 @@ use instructions::*;
 use soarchain_common::*;
 pub use state::*; // expose stake for cpi
 
-declare_id!("2ESmAfheqA1h1wgMhLZQGPir7PMvw2RomJWQZ9safjAJ");
+declare_id!("BjQHTqshCHuf6Zu7XK8jWiJnknMzi7exkRrLXioU4AK2");
 
 #[program]
 pub mod soarchain_staking {

@@ -9,7 +9,7 @@ use instructions::*;
 use soarchain_common::*;
 pub use state::*; // expose state for cpi
 
-declare_id!("A9ckgy4rXMUnupZR3CcmfXnQceE1NbXvthjyKUEuDPKj");
+declare_id!("UPSXdvWxwUTxMVkMtXLZhz2arCmx1uoc8c1z2V7Rf7S");
 
 #[program]
 pub mod soarchain_rewards {

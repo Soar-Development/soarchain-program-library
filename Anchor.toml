@@ -1,6 +1,6 @@
 [workspace]
 members = [
-    "common",
+#    "common",
     "programs/soarchain-staking",
     "programs/soarchain-rewards"
 ]
@@ -11,11 +11,11 @@ skip-lint = false
 
 [provider]
 cluster = "Localnet"
-wallet = "~/.config/solana/id.json"
+wallet = "/home/alp/.config/solana/soarMN9ky6JHALASZPNEmg4yUVP34g25gSULxvHBXPX.json"
 
 [programs.localnet]
-soarchain_staking = "4JnXS6J2uw63R3NYrs9gh6R599w2SEUhgNGZnkgUwGsd"
-soarchain_rewards = "A9ckgy4rXMUnupZR3CcmfXnQceE1NbXvthjyKUEuDPKj"
+soarchain_staking = "BjQHTqshCHuf6Zu7XK8jWiJnknMzi7exkRrLXioU4AK2"
+soarchain_rewards = "UPSXdvWxwUTxMVkMtXLZhz2arCmx1uoc8c1z2V7Rf7S"
 
 [registry]
 url = "https://api.apr.dev"

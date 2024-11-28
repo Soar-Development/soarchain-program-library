@@ -22,22 +22,22 @@ mod soar_token {
 pub use staking_program::ID as STAKING_PROGRAM;
 mod staking_program {
     use super::*;
-    declare_id!("2ESmAfheqA1h1wgMhLZQGPir7PMvw2RomJWQZ9safjAJ");
+    declare_id!("BjQHTqshCHuf6Zu7XK8jWiJnknMzi7exkRrLXioU4AK2");
 }
 
 pub use rewards_program::ID as REWARDS_PROGRAM;
 mod rewards_program {
     use super::*;
-    declare_id!("A9ckgy4rXMUnupZR3CcmfXnQceE1NbXvthjyKUEuDPKj");
+    declare_id!("UPSXdvWxwUTxMVkMtXLZhz2arCmx1uoc8c1z2V7Rf7S");
 }
 
 pub use authority::ID as AUTHORITY;
 mod authority {
     use super::*;
     #[cfg(feature = "mainnet")]
-    declare_id!("");
+    declare_id!("soarMN9ky6JHALASZPNEmg4yUVP34g25gSULxvHBXPX");
     #[cfg(not(feature = "mainnet"))]
-    declare_id!("XXXxddiNnmoD2h2LbQYaL76Swi21MaQbtBbRynAdQL8");
+    declare_id!("soarMN9ky6JHALASZPNEmg4yUVP34g25gSULxvHBXPX");
 }
 
 pub use token_account::ID as TOKEN_ACCOUNT;
