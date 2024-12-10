@@ -7,7 +7,8 @@ pub struct Enter<'info> {
     pub reflection: Account<'info, ReflectionAccount>,
     #[account(
         has_one = authority @ SoarchainError::Unauthorized,
-        constraint = stake.time_unbond == 0 @ SoarchainStakingError::AlreadyUnbonded
+        constraint = stake.key() == pda::soarchain_staking(&authority.key()) @ SoarchainError::InvalidAccount,        
+        constraint = stake.time_unbond == 0 @ SoarchainStakingError::AlreadyUnbonded,
     )]
     pub stake: Account<'info, StakeAccount>,
     #[account(
