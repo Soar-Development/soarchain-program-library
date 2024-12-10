@@ -14,6 +14,7 @@ pub struct Claim<'info> {
     pub reward: Account<'info, RewardAccount>,
     #[account(
         has_one = authority @ SoarchainError::Unauthorized,
+        constraint = stake.key() == pda::soarchain_staking(&authority.key()) @ SoarchainError::InvalidAccount,        
         constraint = stake.time_unbond == 0 @ SoarchainStakingError::AlreadyUnbonded,
         constraint = stake.xsoar >= reward.xsoar @ SoarchainStakingError::Decreased,
     )]

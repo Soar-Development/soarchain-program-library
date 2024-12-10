@@ -8,10 +8,12 @@ pub struct Sync<'info> {
     #[account(
         constraint = stake.time_unbond == 0 @ SoarchainStakingError::AlreadyUnbonded,
         constraint = stake.authority == reward.authority @ SoarchainError::Unauthorized,
+        constraint = stake.key() == pda::soarchain_staking(&authority.key()) @ SoarchainError::InvalidAccount,       
     )]
     pub stake: Account<'info, StakeAccount>,
     #[account(mut)]
     pub reflection: Account<'info, ReflectionAccount>,
+    pub authority: Signer<'info>,
 }
 
 impl<'info> Sync<'info> {
