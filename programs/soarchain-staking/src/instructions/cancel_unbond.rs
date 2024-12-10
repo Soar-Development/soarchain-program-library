@@ -13,7 +13,7 @@ pub struct CancelUnbond<'info> {
         mut,
         has_one = vault @ SoarchainError::InvalidVault,
         has_one = authority @ SoarchainError::Unauthorized,
-        constraint = stake.time_unbond != 0 @ SoarchainStakingError::AlreadyStaked,
+        constraint = stake.time_unbond != 0 @ SoarchainStakingError::NotUnbonded,
     )]
     pub stake: Account<'info, StakeAccount>,
     pub authority: Signer<'info>,
