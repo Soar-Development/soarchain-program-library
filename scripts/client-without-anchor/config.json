@@ -1,0 +1,8 @@
+{
+    "rpcUrl": "https://api.devnet.solana.com",
+    "walletPath": "/home/alp/.config/solana/id.json",
+    "rewardsProgramId": "5WrZKawc9oMr59cwG6SaBsnbGe8eXmhCiZCFNL4CbVqs",
+    "stakingProgramId": "2eSBhDe7FGLUJ3BgEV2ZWqAhJ8kb8u9NCiEYjoeAQDdR",
+    "mint": "6LYGMPnpZnCh4tPGDCdUREmig5SA5NPj2BssYhCerZcP"
+}
+  
