@@ -15,7 +15,6 @@ import {
   // @ts-ignore
   import { SoachainStaking } from '../target/types/soachain_staking';
   import { getAssociatedTokenAddress } from '@solana/spl-token';
-  
   interface SolanaClientConfig {
     rpcUrl: string;
     walletPath: string;
@@ -318,6 +317,48 @@ import {
     
         console.log(`Transaction signature: ${tx}`);
       }
+
+
+      public async withdrawAndClose() {
+        if (!this.wallet.publicKey) {
+          throw new Error('Wallet not connected');
+        }
+      
+        // Derive PDAs and addresses
+        const user = this.wallet.publicKey;
+        const vault = this.getStakingVaultPda(user);
+        const stake = this.getStakePda(user);
+        const ata = await getAssociatedTokenAddress(this.mint, user);
+      
+        console.log('Withdraw and Close:');
+        console.log('User:', user.toBase58());
+        console.log('Vault:', vault.toBase58());
+        console.log('Stake:', stake.toBase58());
+        console.log('ATA:', ata.toBase58());
+      
+        try {
+    
+      
+          // 2) Close
+          const txClose = await this.stakingProgram.methods
+            .close()
+            .accounts({
+              user: ata,
+              stake,
+              vault,
+              authority: user,
+            })
+            .rpc();
+      
+          console.log(`Close Transaction signature: ${txClose}`);
+      
+          // Return both transaction signatures
+          return {  txClose };
+        } catch (error) {
+          console.error('Error in withdrawAndClose:', error);
+          throw error;
+        }
+      }
   }
 
   
@@ -339,7 +380,7 @@ import {
     //await client.enter();
     //console.log('Entered rewards program');
     //client.enter();
-
+    //await client.withdrawAndClose();
     //client.claimRewards();
   
     // Uncomment other methods as needed

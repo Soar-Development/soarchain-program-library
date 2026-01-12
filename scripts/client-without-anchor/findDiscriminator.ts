@@ -17,7 +17,7 @@ function getInstructionDiscriminator(instructionName) {
   };
 }
 
-const instructionName = 'unbond';
+const instructionName = 'enter';
 const { buffer, array } = getInstructionDiscriminator(instructionName);
 
 console.log(`Discriminator for "${instructionName}":`, buffer.toString('hex'));
